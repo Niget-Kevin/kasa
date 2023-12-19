@@ -1,0 +1,43 @@
+@import '../base/normalize';
+
+.navbarre {
+    display: flex;    
+    height: 68px;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1240px;
+    margin: 45px 0px 50px;    
+}
+
+.link{
+    display: flex;
+    gap: 57px;
+    font-size: 24px;    
+}
+
+.link_accueil, .link_propos {
+    text-decoration: none;
+    display: flex;
+    align-items: flex-start;    
+    color: #FF6060;   
+}
+.link {
+    display: flex;
+    gap: 57px;
+
+
+    &__accueil, &__propos {
+        text-decoration: none;
+        display: flex;
+        align-items: flex-start;
+        color: #FF6060;    
+    }
+}
+.logo_header {
+    width: 210.322px;
+    height: 68px;
+}
+
+.active {
+    text-decoration: underline;
+}

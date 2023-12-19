@@ -1,0 +1,25 @@
+.Banner {
+    border-radius: 25px;
+    max-width: 1240px;
+    mix-blend-mode: darken;
+    height: 223px;
+    
+
+        &_img {
+            position: relative;
+            border-radius: 25px;
+            object-fit: cover;
+            height: 223px;
+            width: 100%;
+            filter: brightness(0.65);
+        }
+        &_txt {               
+            color: #FFF;
+            position: absolute;
+            font-size: 34px;
+            top: 30%; /* Ajustez la position verticale selon vos besoins */
+            left: 50%; /* Ajustez la position horizontale selon vos besoins */
+            transform: translate(-50%, -50%);
+            line-height: 142.6%;
+        }
+    }
