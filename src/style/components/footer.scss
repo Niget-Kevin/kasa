@@ -1,0 +1,21 @@
+.footer{
+  background-color: black;
+  padding: 20px 20px 0px 20px;
+  text-align: center;
+  height: 209px;
+  width: 100%;
+  align-items: center;    
+  margin: 0 auto;
+  gap: 28px;
+  
+  
+
+    &_logo{
+      margin-top: 46px;
+    }
+
+    &_txt{
+      color: #FFFFFF;
+    }
+
+}

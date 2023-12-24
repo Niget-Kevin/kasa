@@ -1,8 +1,11 @@
+
+
 .Banner {
     border-radius: 25px;
     max-width: 1240px;
     mix-blend-mode: darken;
     height: 223px;
+    margin: 0 auto;
     
 
         &_img {
@@ -23,3 +26,4 @@
             line-height: 142.6%;
         }
     }
+

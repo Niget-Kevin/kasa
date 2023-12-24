@@ -1,12 +1,12 @@
 @import '../base/normalize';
 
-.navbarre {
-    display: flex;    
+.navbarre {display: flex;
     height: 68px;
     justify-content: space-between;
     align-items: center;
     max-width: 1240px;
-    margin: 45px 0px 50px;    
+    margin: 45px auto 50px; 
+
 }
 
 .link{

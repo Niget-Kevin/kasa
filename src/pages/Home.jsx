@@ -1,16 +1,14 @@
-import Banner from '../assets/images/IMG.png';
-import '../style/base/_normalize.scss';
-import '../style/pages/home.scss';
+import React from 'react';
 
-function Home() {
-   return (
-      <section>
-         <div className='Banner'>
-            <img className='Banner_img' src={Banner} alt='Paysage' />
-            <p className='Banner_txt'>Chez vous, partout et ailleurs</p>
-         </div>
-      </section>
-   );
+import Banner from '../layouts/Banner';
+import Gallery from '../components/Gallery';
+
+export default function Home() {
+	return (
+		<div className='home'>
+			<Banner />
+			<Gallery />
+
+		</div>
+	)
 }
-
-export default Home;

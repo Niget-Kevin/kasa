@@ -1,0 +1,14 @@
+.home__gallery {
+    background: #F7F7F7;
+    min-height: 50vh;
+    border-radius: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    padding: 2.5rem;
+}
+
+.home__gallery > a {
+    width: 30%;
+}
