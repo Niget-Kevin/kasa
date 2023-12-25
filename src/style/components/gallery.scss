@@ -1,12 +1,14 @@
+@import '../utils//mixins.scss';
 .home__gallery {
+    @include flex;
     background: #F7F7F7;
-    min-height: 50vh;
-    border-radius: 1.5rem;
-    display: flex;
-    justify-content: space-between;
     flex-wrap: wrap;
-    gap: 1.5rem;
-    padding: 2.5rem;
+    gap: 50px;   
+    padding: 50px;
+    border-radius: 25px;
+    width: 95%;
+    margin: 0 auto;
+    margin: 43px auto 50px;
 }
 
 .home__gallery > a {

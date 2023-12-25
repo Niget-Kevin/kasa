@@ -3,8 +3,7 @@ import Card from './Card';
 import data from '../data/logements.json';
 import '../style/components/gallery.scss';
 
-function Gallery() {
-    console.log(data);
+function Gallery() {    
     return (
     <section className='home__gallery'>
         {data.map(data => {

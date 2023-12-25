@@ -1,13 +1,22 @@
-import banner from '../assets/images/IMG.png';
+
+
+import React from 'react';
+import PropTypes from 'prop-types';
 import '../style/layouts/banner.scss';
-const title= banner
-function Banner() {
+
+function Banner({ title, showText }) {
     return (
         <section className='Banner'>
-                <img className='Banner_img' src={banner} alt='Paysage' />
-                {title && <p className='Banner_txt'>Chez vous, partout et ailleurs</p>}
-        </section>     
+        <img className='Banner_img' src={title} alt='Paysage' />
+        {showText && <p className='Banner_txt'>Chez vous, partout et ailleurs</p>}
+    </section>
     );
 }
 
+Banner.propTypes = {
+    title: PropTypes.string.isRequired,
+    showText: PropTypes.bool,
+};
+
 export default Banner;
+
