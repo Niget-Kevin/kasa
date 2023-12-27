@@ -1,6 +1,7 @@
 @import '../utils//mixins.scss';
 .home__gallery {
     @include flex;
+    max-width: 1240px;
     background: #F7F7F7;
     flex-wrap: wrap;
     gap: 50px;   

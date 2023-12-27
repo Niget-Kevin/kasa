@@ -32,11 +32,11 @@ function About() {
 
 	return (
 		<div>
-			<Banner title={bannerImage} showText={false} />
+			<Banner title={bannerImage} />
 			<main className='about_main'>
 				{aboutDatas.map(data => (
 					<div key={data.id} className="about_main_collapse">
-						<Collapse style={{ margin: '30px 0' }} title={data.title} content={data.content} />
+						<Collapse title={data.title} content={data.content} />
 					</div>
 			))}
 		</main>
