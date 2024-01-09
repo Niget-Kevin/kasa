@@ -5,15 +5,15 @@ import Logo from '../assets/images/logo_header.svg'
 function Header() {
     return (
         <nav className='navbarre'>
-                <img className='logo_header' alt='Logo de kasa' src={Logo} />
+                <img className='navbarre__logo' alt='Logo de kasa' src={Logo} />
             <ul className='link'>
                 <li>
-                    <NavLink to="/" className='link_accueil'>
+                    <NavLink to="/" className='link__accueil'>
                         Accueil
                     </NavLink>
                 </li>
                 <li>
-                    <NavLink to="/about" className='link_propos'>
+                    <NavLink to="/about" className='link__propos'>
                         A Propos
                     </NavLink>
                 </li>

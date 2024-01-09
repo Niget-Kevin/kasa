@@ -1,61 +1,164 @@
+@import '../index.scss';
 
 p, h1 {
-    color: #FF6060;
+    color: $color-secondary;
 }
 
 .logement{
-    display: flex;
-    flex-direction: column; 
+    @include grid-column (1);
     margin: 50px auto; 
-    max-width: 1240px  
-}
+    width: 100%;
+    max-width: 1240px ;
+    @include media-max("tablet-up"){
+        margin: 7px auto 27px;
+    } 
 
-.head{
-    display: flex;
-    justify-content: space-between;
-    margin-top: 30px;
-}
+    &_content{
+        @include grid-column(2);
 
-.host {
-    display: flex;
-    &__name{
-        display: flex;
-        flex-direction: column;
+        @include media-max("tablet-up"){
+            @include grid-column (1);
+            
+        } 
     }
-    &__img {
-        width: 64px;
-        height: 64px;
-        flex-shrink: 0;
-        border-radius: 50px;
-    }
-}
-
-.tag {
-    display: flex;
-    gap: 10px;
-    margin: 20px 0px 24px;
     
 
-    &__span{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        color: #FFFFFF;
-        background: #FF6060;
-        border-radius: 10px; 
-        padding: 4px 20px;
-        flex-shrink: 0;
+
+    &__collapse {
+        @include grid-column(2);
+        align-items: start;
+        gap: 76px;
+        width: 100%;
+
+        @include media-max("tablet-up"){
+            @include grid-column (1);
+            gap: 20px;
+            
+        } 
+    
+        &__title{
+            width: 100%;
+        }
+    
+    }
+
+}
+
+.property{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 22px;
+
+    @include media-max("tablet-up"){
+        margin-top: 3px;
+    } 
+    &__title{
+        @include font-large;
+
+        @include media-max("tablet-down"){
+            @include font-medium;
+        } 
+
+        @include media-max("tablet-up"){
+            @include font-small;
+        } 
         
+    }
+    &__subtitle{
+        @include font-small;
+        margin-top: 5px;
+        @include media-max("tablet-down"){
+            @include font-min;
+        } 
+
+        @include media-max("tablet-up"){
+            @include font-tel;
+        } 
+    }
+
+    &__tag {
+        display: flex;
+        gap: 10px;
+        margin: 20px 0px 24px;
+
+        @include media-max("tablet-up"){
+            margin: 10px 0 16px;            
+        } 
+
+        &__span{
+            @include font-min;
+            @include flex-center;
+            color: $color-primary;
+            background: $color-secondary;
+            border-radius: 10px; 
+            padding: 4px 20px; 
+
+            @include media-max("tablet-down"){
+                @include font-tel;
+            } 
+
+            @include media-max("tablet-up"){
+                font-size: 10px;
+                min-width: 124px;
+                min-height: 26px;
+            }        
+        }
     }
 }
 
-.collapse2 {
-    display: flex;
-    flex-direction: row;
-    gap: 76px;
-    width: 100%;
+.host{
+    @include grid-column(1);
+    justify-items: end;
+    gap: 11px;
+    margin-top: 23px;   
 
+    @include media-max("tablet-up"){
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: space-between;
+        margin: 0px 0px 13px;
+    } 
+
+    &__content{
+        @include flex-center;
+        gap: 10px;
+
+        &__name {
+            color: $color-secondary;
+            @include font-small;
+            margin: 5px 0;
+
+            @include media-max("tablet-down"){
+                @include font-min;
+            } 
+
+
+            @include media-max("tablet-up"){
+                @include font-tel;
+                
+            } 
+
+        }
+
+        &__img {
+            width: 64px;
+            height: 64px;
+            flex-shrink: 0;
+            border-radius: 50px;
+
+            @include media-max("tablet-down"){
+                width: 48px;
+                height: 48px;
+            } 
+
+            @include media-max("tablet-up"){
+                width: 32px;
+                height: 32px;                
+            } 
+        }
+    }
 }
-.collapse3{
-    width: 50%;
-}
+
+
+

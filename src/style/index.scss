@@ -1,10 +1,4 @@
+
 @import '../style/utils/mixins.scss';
 @import '../style/utils/variable.scss';
-@import '../style/base/normalize';
 
-.main_container {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    min-height: 100vh;
-}

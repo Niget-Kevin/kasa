@@ -1,16 +1,17 @@
 import React from 'react';
 
-import Banner from '../layouts/Banner';
-import Gallery from '../components/Gallery';
+import Banner from '../components/Banner';
+import Collection from '../components/Collection';
 import bannerImage from '../assets/images/IMG.png'
 
 
-export default function Home() {
+function Home() {
 	return (
 		<div className='home'>
-			<Banner title={bannerImage} text='Chez vous, partout et ailleurs' />
-			<Gallery />
-
+			<Banner banner={bannerImage} text='Chez vous, partout et ailleurs' />
+			<Collection />
 		</div>
 	)
 }
+
+export default Home

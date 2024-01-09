@@ -1,0 +1,58 @@
+@import '../';
+
+.Banner {
+    border-radius: 25px;
+    max-width: 1240px;
+    height: 223px;
+    margin: 0 auto;
+    width: 100%;
+    position: relative;
+    background-position: 25% 50%;
+
+    @include media-max("desktop-up") {
+        height: 180px;
+        
+    }
+
+
+    @include media-max("tablet-up") {
+        height: 111px;
+        
+    }
+
+        &_img {            
+            border-radius: 25px;
+            object-fit: cover;
+            height: 100%;
+            width: 100%;
+            filter: brightness(0.65);
+            @include media-max("tablet-up") {
+                height: 100%;
+                
+            }
+        }
+
+        &_txt {                             
+            @include flex-center;
+            position: absolute; 
+            margin: 0 auto;         
+            color: $color-primary;
+            width: 100%;
+            top: 35%;
+            left: 0%;
+            @include font-max;
+
+
+            @include media-max("tablet-down"){
+                @include font-large;
+                
+            } 
+            @include media-max("tablet-up"){
+                @include font-medium;
+                top: 22%;
+                left: 3%;
+                width: 30%;
+                min-width:225px;
+        }
+    }
+}

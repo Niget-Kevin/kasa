@@ -1,7 +1,7 @@
-
 import React from 'react';
 import { Link } from 'react-router-dom';
 import '../style/components/card.scss';
+
 
 function Card({ id, title, cover}) {
 
@@ -9,11 +9,13 @@ function Card({ id, title, cover}) {
       <Link to={`/logement/${id}`}>
         <div className='card'>
           <img src={cover} alt={title} className='card__image'/>
-  
-          <h3 className='card__subtitle'>{title}</h3>
+          <h3 className='card__title'>{title}</h3>
+          
         </div>
       </Link>
     )
   }
   
   export default Card
+
+

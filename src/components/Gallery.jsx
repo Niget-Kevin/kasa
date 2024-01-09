@@ -1,23 +1,32 @@
-import React from 'react';
-import Card from './Card';
-import data from '../data/logements.json';
+import React, { useState } from 'react';
 import '../style/components/gallery.scss';
+import arrowLeft from '../assets/images/arrowleft.svg';
+import arrowRight from '../assets/images/arrowright.svg';
 
-function Gallery() {    
-    return (
-    <section className='home__gallery'>
-        {data.map(data => {
-            return (
-            <Card
-                key={data.id} 
-                id={data.id} 
-                title={data.title} 
-                cover={data.cover} 
-            />
-            )
-        })}
-    </section>
-    )
-}
+const Gallery= ({ images }) => {
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
-export default Gallery
+  const handleNext = () => {
+    setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
+  };
+
+  const handlePrev = () => {
+    setCurrentImageIndex((prevIndex) => (prevIndex - 1 + images.length) % images.length);
+  };
+
+  return (
+    <div className="gallery">
+      <img className='gallery__img' src={images[currentImageIndex]} alt={`Slide ${currentImageIndex + 1}`} />
+
+      <div className="slide__arrow">
+        <img className='slide__arrow__left' src={arrowLeft} alt="Previous" onClick={handlePrev} />
+        <img className='slide__arrow__right' src={arrowRight} alt="Next" onClick={handleNext} />
+      </div>
+
+      <p className="slide__counter">{currentImageIndex + 1}/{images.length}</p>
+    </div>
+  );
+};
+
+export default Gallery;
+

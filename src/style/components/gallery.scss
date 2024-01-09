@@ -1,17 +1,77 @@
-@import '../utils//mixins.scss';
-.home__gallery {
-    @include flex;
-    max-width: 1240px;
-    background: #F7F7F7;
-    flex-wrap: wrap;
-    gap: 50px;   
-    padding: 50px;
+@import '../index.scss';
+
+.gallery {
+    width: 100%;
+    position: relative;
     border-radius: 25px;
-    width: 95%;
-    margin: 0 auto;
-    margin: 43px auto 50px;
+    height: 415px;
+    @include media-max("tablet-up"){
+        height: 255px;
+    } 
+
+    &__img {
+        height: 100%;
+        border-radius: 25px;
+        width: 100%;
+        object-fit: cover;
+        @include media-max("tablet-up"){
+        } 
+    }
 }
 
-.home__gallery > a {
-    width: 30%;
+.slide__arrow {
+    position: absolute;
+    @include flex-between;
+    top: 50%;
+    width: 100%;
+    cursor: pointer;
+    
+
+    &__left{
+        position: absolute;
+        left: 2%;
+
+        @include media-max("tablet-down"){
+            height: 38px;
+            width: 38px ;
+        } 
+
+        @include media-max("tablet-up"){
+            height: 24px;
+            width: 24px ;
+        } 
+    }
+
+    &__right{
+        position: absolute;
+        right: 2%;
+
+        @include media-max("tablet-down"){
+            height: 38px;
+            width: 38px ;
+
+        } 
+        @include media-max("tablet-up"){
+            height: 24px;
+            width: 24px ;
+        } 
+    }
+
+}
+
+.slide__counter {
+    @include font-small;
+    color:$color-primary;
+    text-align: center;
+    position: absolute;
+    bottom: 24px;
+    width: 100%;
+
+    @include media-max("tablet-down"){
+        @include font-min;
+            } 
+
+    @include media-max("tablet-up"){
+        @include font-tel;
+    } 
 }

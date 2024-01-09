@@ -1,47 +1,56 @@
 import React from 'react';
 import Data from '../data/logements.json';
 import { useParams } from 'react-router-dom';
-import Collapse from '../components/Collapse';  // Importez le composant Collapse
+import Collection from '../components/Gallery';
+import Rating from '../components/Rating';
+import Collapse from '../components/Collapse';
+import Error from './Error';
 import '../style/pages/logement.scss';
 
 const Logement = () => {
     const { id } = useParams();
     const logementData = Data.find(logement => logement.id === id);
 
-    if (!logementData) {
-        // Gérez le cas où le logement n'est pas trouvé
-        return <div>Logement non trouvé</div>;
+    if (!logementData) {       
+        return (<Error />);
     }
 
     return (
         <div className='logement'>
-            <img src={logementData.cover} alt={logementData.title} />
-            <div className='head'>
-                <h1>{logementData.title}</h1>
-                {/* Afficher le nom et la photo de l'hôte */}
+            <div className='logement__slide'>
+                <Collection images={logementData.pictures} />
+            </div>
+
+            <div className='logement_content'>
+                <div className='property'>
+                    <h1 className='property__title'>{logementData.title}</h1>                    
+                    <p className='property__subtitle'>{logementData.location}</p>
+                    <div className='property__tag'>
+                        {logementData.tags.map(tag => (<span className='property__tag__span' key={tag}>{tag}</span>))}
+                    </div>                
+                </div>
+
                 <div className="host">
-                    <p className='host__name'>{logementData.host.name}</p>
-                    <img className='host__img' src={logementData.host.picture} alt={logementData.host.name} />
+                    <div className="host__content one">
+                        <div>
+                            <p className='host__content__name'>{logementData.host.name.split(' ')[0]}</p>
+                            <p className='host__content__name'>{logementData.host.name.split(' ')[1]}</p>
+                        </div>
+                        <img className='host__content__img' src={logementData.host.picture} alt={logementData.host.name} />
+                    </div>
+                    <Rating className='two' value={parseInt(logementData.rating)} maxStars={5} />
                 </div>
             </div>
-            {/* Afficher l'emplacement */}
-            <p>{logementData.location}</p>
 
-            {/* Afficher les tags avec une mise en forme spécifique */}
-            <div className='tag'>
-                {logementData.tags.map(tag => (
-                    <span className='tag__span' key={tag}>{tag}</span>
-                ))}
-            </div>
-            <div className='collapse2' >
-                {/* Utiliser le composant Collapse pour Description et Équipements */}
-                <div className='collapse3'>
+            <div className='logement__collapse' >                
+                <div className='logement__collapse__title'>
                     <Collapse title="Description" content={logementData.description} />
                 </div>
-                <div className='collapse3'>
+                <div className='logement__collapse__title'>
                     <Collapse title="Équipements" content={logementData.equipments} />
                 </div>
-            </div>            
+                
+            </div>
             
         </div>
     );

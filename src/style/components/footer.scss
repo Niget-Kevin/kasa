@@ -1,22 +1,44 @@
+@import '../index.scss';
+
 .footer{
-  background-color: black;
-  
+  background-color: $background-footer;  
   text-align: center;
   height: 209px;
+  min-width: 357px;
   width: 100%;
-  align-items: center;    
-  margin: 0 auto;
-  gap: 28px;
-  
-  
+  @include media-max("tablet-up"){
+    @include grid-column(1);
+    justify-items: center;
+    align-content: center;
+  }
 
     &_logo{
-      margin-top: 66px;
+      margin: 66px auto 50px;
+      height: 39px;
+      width: 122px;
+
+      @include media-max("desktop-up"){
+        margin-bottom: 25px;
+      } 
+
+      @include media-max("tablet-up"){
+        margin-bottom: 15px;
+      } 
     }
 
-    &_txt{
-      margin: 30px auto;
-      color: #FFFFFF;
+    &_txt{      
+      color: $color-primary;
+      @include font-medium;
+      @include media-max("desktop-up"){
+        @include font-small;
+             
+      } 
+
+      @include media-max("tablet-up"){
+        @include font-tel;
+        width: 150px;
+        margin-bottom: 58px;     
+      } 
     }
 
 }

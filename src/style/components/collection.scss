@@ -1,0 +1,24 @@
+@import '../utils//mixins.scss';
+
+.collection {
+    @include grid-column(3);
+    max-width: 1240px;    
+    background: $gallery;    
+    border-radius: 25px;
+    width: 95%;    
+    padding: 50px;
+    margin: 43px auto 50px;
+    gap: 50px;
+
+    @include media-max("desktop-down"){
+        @include grid-column(2);
+        
+    } 
+
+    @include media-max("tablet-down"){
+        @include grid-column(1);
+        
+    } 
+}
+
+

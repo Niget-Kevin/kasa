@@ -1,0 +1,26 @@
+@import '../index.scss';
+.stars {
+    display: flex;
+    gap: 10px;
+
+    @include media-max("tablet-down"){
+        height: 18px;
+        gap: 8px;
+    } 
+
+    @include media-max("tablet-up"){
+        height: 18px;
+        gap: 7px;
+    } 
+}
+
+.star-icon{
+    width: 30px;
+    @include media-max("tablet-down"){
+        width: 20px;
+    } 
+
+    @include media-max("tablet-up"){
+        width: 20px;
+    } 
+}

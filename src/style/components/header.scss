@@ -1,43 +1,53 @@
-@import '../base/normalize';
+@import '../index.scss';
 
-.navbarre {display: flex;
-    height: 68px;
-    justify-content: space-between;
-    align-items: center;
+.navbarre {
+    @include flex-between;
+    width: 100%;
     max-width: 1240px;
-    margin: 45px auto 50px; 
+    margin: 45px auto 50px;
 
-}
+    @include media-max("tablet-up"){
+        margin: 20px auto 19px;
+    } 
+    
+    &__logo{
+        width: 210.322px;
+        height: 68px;
 
-.link{
-    display: flex;
-    gap: 57px;
-    font-size: 24px;    
-}
-
-.link_accueil, .link_propos {
-    text-decoration: none;
-    display: flex;
-    align-items: flex-start;    
-    color: #FF6060;   
-}
-.link {
-    display: flex;
-    gap: 57px;
-
-
-    &__accueil, &__propos {
-        text-decoration: none;
-        display: flex;
-        align-items: flex-start;
-        color: #FF6060;    
+        @include media-max("tablet-up"){
+            height: 80%;
+            width: 28%;
+            //height: 46.881px;
+            //width: 145px;
+            
+            
+        } 
     }
 }
-.logo_header {
-    width: 210.322px;
-    height: 68px;
+
+
+.link {
+    @include flex-center;
+    @include font-medium;
+    gap: 57px;
+    @include media-max("tablet-up"){
+        @include font-tel;
+        gap: 26px;
+    }
+    
+
+    &__accueil, 
+    &__propos {
+        @include flex-center;
+        text-decoration: none;
+        color: $color-secondary;     
+    }
 }
 
 .active {
     text-decoration: underline;
+}
+
+li {
+    list-style: none;
 }

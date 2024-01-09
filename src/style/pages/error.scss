@@ -1,35 +1,46 @@
-.ContError {
-    display: flex;
+@import '../index.scss';
 
-flex-direction: column;
-justify-content: center;
-flex-shrink: 0;
+.error{
+    &__title,
+    &__text,
+    &__link{
+        color:$color-secondary;
+    }
 }
-.TitleError {
-    color: #FF6060;
-text-align: center;
-font-family: Montserrat;
-font-size: 233px;
-font-style: normal;
-margin: 24px auto 84px;
 
-}
-.TextError {
-    color: #FF6060;
-font-family: Montserrat;
-font-size: 36px;
-font-style: normal;
-font-weight: 500;
-line-height: 142.6%; /* 51.336px */
-margin: 0px auto;
-}
-.LinkError {
-    color: #FF6060;
-font-family: Montserrat;
-font-size: 18px;
-font-style: normal;
-font-weight: 500;
-line-height: 142.6%; /* 25.668px */
-text-decoration-line: underline;
-margin: 139px auto;
+.error {
+    @include grid-column (1);
+
+    &__title{        
+        font-size: 233px;
+        font-style: normal;
+        margin: 24px auto 84px;
+        @include media-max("tablet-up"){
+            font-size: 69px;
+        } 
+    }
+
+    &__text{
+        display: flex;
+
+        @include font-large;
+        margin: 0px auto;
+
+        @include media-max("tablet-up"){
+            @include font-small;
+            margin: 0 auto;
+            
+
+        } 
+    }
+
+    &__link{
+        @include font-small;
+        margin: 139px auto;
+
+        @include media-max("tablet-up"){
+            @include font-min;
+    
+        } 
+    }
 }

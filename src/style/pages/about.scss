@@ -1,13 +1,9 @@
+@import '../index.scss';
+
 .about_main {
-    display: flex;
-    flex-direction: column;
+    @include grid-column;
     gap: 30px;
-    align-items: center;
-    margin: 38px 0;
-    
-    }
-    .about_main_collapse {
-        display: flex;
-        
+    margin: 38px auto; 
+    width: 100%;
     
     }
