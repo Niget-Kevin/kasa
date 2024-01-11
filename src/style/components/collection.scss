@@ -17,6 +17,10 @@
 
     @include media-max("tablet-down"){
         @include grid-column(1);
+        width: 100%;
+        background: $color-primary ;
+        padding: 0;  
+        margin: 27px auto ;     
         
     } 
 }

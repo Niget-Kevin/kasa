@@ -2,14 +2,26 @@
 
 .card {
     @include grid-end;
-    background-image: $background-img;
+    background: $background-img;
     border-radius: 10px;    
     position: relative;
+    width: 100%;
+    height: 100%;
+    min-height: 340px;
+
+    @include media-max("tablet-up"){
+        
+    }
+
+    @include media-max("phone-down"){
+        min-height: 225px;
+        min-height: 335px;
+    }
 
     &__image{
         width: 100%;
-
-        min-height: 335px;
+        height: 100%;
+        
         object-fit: cover;
         border-radius: 10px;
         filter: $dark;
